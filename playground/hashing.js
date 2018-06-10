@@ -1,5 +1,5 @@
 const {SHA256} = require('crypto-js');
-const {jwt} = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 
 var data = {
     id: 10
@@ -7,3 +7,6 @@ var data = {
 
 var token = jwt.sign(data, '123abc');
 console.log(token);
+
+var decoded = jwt.verify(token, '123abc');
+console.log(decoded);
